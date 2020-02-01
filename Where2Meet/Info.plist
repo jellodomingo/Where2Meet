@@ -60,5 +60,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>YO BITCH WE NEED UR PERMISSION</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>YO BITCH WE NEED UR PERMISSION</string>
 </dict>
 </plist>
