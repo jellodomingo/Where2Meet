@@ -17,6 +17,7 @@ class PreferenceViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var radiusSlider: UISlider!
     @IBOutlet weak var timeSlider: UISlider!
     @IBOutlet weak var radiusSliderLabel: UILabel!
+    @IBOutlet weak var timeSliderLabel: UILabel!
     
     @IBOutlet weak var cheapButton: UIButton!
     @IBOutlet weak var middleClassButton: UIButton!
@@ -80,6 +81,14 @@ class PreferenceViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     @IBAction func distanceSlider(_ sender: UISlider) {
+        
+        //styling the slider hopefully to display numberrrr
+        let x = Int(convertToMiles(meters: Double(sender.value)))
+        radiusSliderLabel.text = "\(x)"
+        radiusSliderLabel.center = setUISliderThumbValueWithLabel(slider: sender)
+        
+        preferences.radius = String(format:"%d",Int(sender.value*30))
+        print(Int(sender.value*30))
 
         radiusSlider.minimumValue = 1700
         radiusSlider.maximumValue = 30000
@@ -102,6 +111,12 @@ class PreferenceViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     @IBAction func durationSlider(_ sender: UISlider) {
+        
+        //styling the slider hopefully to display numberrrr
+        let x = Int(convertToHours(minutes: Int(sender.value)))
+        timeSliderLabel.text = "\(x)"
+        timeSliderLabel.center = setUISliderThumbValueWithLabel(slider: sender)
+        
         timeSlider.minimumValue = 60
         timeSlider.maximumValue = 300
         
