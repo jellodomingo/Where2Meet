@@ -19,6 +19,7 @@
 		178D351C23E6274800D3B1E1 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178D351B23E6274800D3B1E1 /* MainMenuViewController.swift */; };
 		178D351E23E62EA700D3B1E1 /* CodeStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178D351D23E62EA700D3B1E1 /* CodeStruct.swift */; };
 		178D352023E6869E00D3B1E1 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178D351F23E6869E00D3B1E1 /* Helpers.swift */; };
+		17FE1F0423E6FACD00CDE0A2 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FE1F0323E6FACD00CDE0A2 /* ResultsViewController.swift */; };
 		A6E478F323E64287003B9012 /* PreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E478F223E64287003B9012 /* PreferenceViewController.swift */; };
 		A6E478F523E6447A003B9012 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E478F423E6447A003B9012 /* extensions.swift */; };
 		A6E478F723E69DFE003B9012 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E478F623E69DFE003B9012 /* RoundButton.swift */; };
@@ -61,6 +62,7 @@
 		178D351B23E6274800D3B1E1 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		178D351D23E62EA700D3B1E1 /* CodeStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeStruct.swift; sourceTree = "<group>"; };
 		178D351F23E6869E00D3B1E1 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		17FE1F0323E6FACD00CDE0A2 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ResultsViewController.swift; path = Where2Meet/Controllers/ResultsViewController.swift; sourceTree = SOURCE_ROOT; };
 		A6E478F223E64287003B9012 /* PreferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceViewController.swift; sourceTree = "<group>"; };
 		A6E478F423E6447A003B9012 /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		A6E478F623E69DFE003B9012 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 		178D351723E5E06100D3B1E1 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				17FE1F0323E6FACD00CDE0A2 /* ResultsViewController.swift */,
 				178D34E923E5DEF100D3B1E1 /* ViewController.swift */,
 				178D351B23E6274800D3B1E1 /* MainMenuViewController.swift */,
 				A6E478F223E64287003B9012 /* PreferenceViewController.swift */,
@@ -326,6 +329,7 @@
 				178D34E823E5DEF100D3B1E1 /* SceneDelegate.swift in Sources */,
 				A6E478F323E64287003B9012 /* PreferenceViewController.swift in Sources */,
 				178D351E23E62EA700D3B1E1 /* CodeStruct.swift in Sources */,
+				17FE1F0423E6FACD00CDE0A2 /* ResultsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
