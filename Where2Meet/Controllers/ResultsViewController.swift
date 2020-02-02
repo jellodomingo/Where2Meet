@@ -11,8 +11,26 @@ import UIKit
 class ResultsViewController: UIViewController {
 
     var places = [[String: Any]]()
+
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var placeTitle1: UILabel!
+    @IBOutlet weak var typeImage1: UIImageView!
+    @IBOutlet weak var addressLabel1: UILabel!
+    @IBOutlet weak var priceLabel1: UIImageView!
+    @IBOutlet weak var ratingLabel1: UILabel!
+    
+    @IBOutlet weak var placeTitle2: UILabel!
+    @IBOutlet weak var typeImage2: UIImageView!
+    @IBOutlet weak var priceLabel2: UIImageView!
+    @IBOutlet weak var ratingLabel2: UILabel!
+    @IBOutlet weak var addressLabel2: UILabel!
+    
+    
+    @IBOutlet weak var placeTitle3: UILabel!
+    @IBOutlet weak var typeImage3: UIImageView!
+    @IBOutlet weak var priceLabel3: UIImageView!
+    @IBOutlet weak var addressLabel3: UILabel!
+    @IBOutlet weak var ratingLabel3: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +42,11 @@ class ResultsViewController: UIViewController {
         
     }
     
-
+    func changeViewOne()
+    {
+        
+    }
+    
     /*
     // MARK: - Navigation
 
