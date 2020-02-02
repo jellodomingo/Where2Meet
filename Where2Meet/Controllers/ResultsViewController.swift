@@ -10,7 +10,7 @@ import UIKit
 
 class ResultsViewController: UIViewController {
 
-    var places = [[String: Any]]()
+    var places = [String:[String: Any]]()
     
     @IBOutlet weak var tableView: UITableView!
     

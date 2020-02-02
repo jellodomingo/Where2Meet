@@ -31,6 +31,8 @@ class PreferenceViewController: UIViewController, CLLocationManagerDelegate {
 
     var preferences = SubmissionRequest()
     
+    var placesDict: [String:[String:Any]] = [:]
+    
     var code: String? = ""
     var device_id: String = ""
     var location: Location = Location(lat: 0.0, lng: 0.0)
@@ -190,8 +192,6 @@ class PreferenceViewController: UIViewController, CLLocationManagerDelegate {
         //send data
         submissionRequest(payload: preferences)
         //save all options to the preferences class
-        
-        self.performSegue(withIdentifier: "pref_to_over", sender: self)
     }
     
     func submissionRequest(payload: SubmissionRequest) -> Void
@@ -226,23 +226,29 @@ class PreferenceViewController: UIViewController, CLLocationManagerDelegate {
                     */
                     
                     //print(String(data: data!, encoding: .utf8)!)
-                    let dataDictionary = try! JSONSerialization.jsonObject(with: (data ?? nil)!, options: []) as! [String: [String: Any]]
+                    let dataDictionary = try! JSONSerialization.jsonObject(with: (data ?? nil)!, options: []) as! [String: [String:Any]]
                     
                     print(dataDictionary)
                     
-                    //var placesDict: [[String: Any]] = [:]
+                    var place: [String:Any] = [:]
                     
                     for v in dataDictionary.values
                     {
                         //placesDict
                         
-                        print(v["name"])
-                        print(v["formatted_address"])
-                        print(v["types"])
-                        print(v["price_level"])
-                        print(v["votes"])
                         
+                        place["formatted_address"] = v["formatted_address"]
+                        //print(v["formatted_address"])
+                        place["types"] = v["types"]
+                        //print(v["types"])
+                        place["price_level"] = v["price_level"]
+                        //print(v["price_level"])
+                        place["votes"] = v["votes"]
+                        //print(v["votes"])
+                        place["types"] = v["types"]
+                        place["rating"] = v["rating"]
                         
+                        self.placesDict["name"] = place
                     }
                     
                     self.performSegue(withIdentifier: "pref_to_over", sender: self)
@@ -263,6 +269,10 @@ class PreferenceViewController: UIViewController, CLLocationManagerDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+        
+        let resultsViewController = segue.destination as! ResultsViewController
+        
+        resultsViewController.places = self.placesDict
     }
     
     
