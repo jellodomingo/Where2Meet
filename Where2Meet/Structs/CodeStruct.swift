@@ -13,9 +13,9 @@ struct NewGroupCodeRequest : Encodable {
     var device_id: String
 }
 
-//generate reponse
+//generate response
 struct NewGroupCodeResponse : Decodable {
-    var code: String
+    var code: String?
 }
 
 //getprefs
@@ -24,6 +24,7 @@ struct ExistingGroupCodeRequest : Encodable {
     var code: String
 }
 
+//getprefs response
 struct PreferencesResponse : Decodable {
     var lat:String?
     var lng:String?
@@ -33,6 +34,21 @@ struct PreferencesResponse : Decodable {
     var start_time:String?
     var duration:String?
 }
+
+//submit request
+struct SubmissionRequest : Decodable {
+    var device_id:String
+    var code:String
+    
+    var lat:String?
+    var lng:String?
+    var radius:String?
+    var category:String?
+    var price:String?
+    var start_time:String?
+    var duration:String?
+}
+
 
 /*
 struct SubmissionResponse : Decodable {

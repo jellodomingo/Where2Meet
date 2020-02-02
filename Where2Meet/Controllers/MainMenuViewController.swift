@@ -20,8 +20,6 @@ class MainMenuViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         
         locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.startUpdatingLocation()
         
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestAlwaysAuthorization()
@@ -100,15 +98,6 @@ class MainMenuViewController: UIViewController, CLLocationManagerDelegate {
                 } catch {
                     print("Decoder Error")
                 }
-                
-                /*
-                do {
-                    let messageData = try JSONDecoder().decode(.self, from: jsonData)
-                    completion(.success(messageData))
-                } catch {
-                    completion(.failure(.decodingProblem))
-                }
-                */
                 
             }
             task.resume()
@@ -192,7 +181,7 @@ class MainMenuViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    //G
+    //Get IPAddress
     func getIPAddress() -> NewGroupCodeRequest {
         return NewGroupCodeRequest(device_id: getWiFiAddress() ?? "")
     }
