@@ -12,17 +12,10 @@ import NetworkExtension
 
 class MainMenuViewController: UIViewController, CLLocationManagerDelegate {
     
-    let locationManager = CLLocationManager()
-    
     @IBOutlet weak var codeField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        locationManager.delegate = self
-        
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.requestAlwaysAuthorization()
         
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "home_bg.png")!)
         
@@ -165,22 +158,6 @@ class MainMenuViewController: UIViewController, CLLocationManagerDelegate {
         return address
     }
     
-    
-    // Get long and lat location from user GPS
-    func getLocation() {
-        var currentLoc: CLLocation!
-        if(CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
-        CLLocationManager.authorizationStatus() == .authorizedAlways) {
-           currentLoc = locationManager.location
-           print(currentLoc.coordinate.latitude)
-           print(currentLoc.coordinate.longitude)
-        }
-        else
-        {
-            print("nothing")
-        }
-    }
-    
     //Get IPAddress
     func getIPAddress() -> NewGroupCodeRequest {
         return NewGroupCodeRequest(device_id: getWiFiAddress() ?? "")
@@ -228,15 +205,10 @@ class MainMenuViewController: UIViewController, CLLocationManagerDelegate {
     }
 
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
+        //let userCode =
+        
     }
-    */
 
 }

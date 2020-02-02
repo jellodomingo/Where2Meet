@@ -37,6 +37,7 @@ struct PreferencesResponse : Decodable {
 
 //submit request
 struct SubmissionRequest : Decodable {
+    
     var device_id:String?
     var code:String?
     
@@ -47,6 +48,19 @@ struct SubmissionRequest : Decodable {
     var price:String?
     var start_time:String?
     var duration:String?
+    
+    init()
+    {
+        self.device_id = ""
+        self.code = ""
+        self.lat = ""
+        self.lng = ""
+        self.radius = ""
+        self.category = ""
+        self.price = ""
+        self.start_time = ""
+        self.duration = ""
+    }
 }
 
 
