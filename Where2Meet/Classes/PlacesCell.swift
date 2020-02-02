@@ -16,6 +16,7 @@ class PlacesCell: UITableViewCell {
     @IBOutlet weak var starsLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var typeLabel: UILabel!
+    @IBOutlet weak var voteButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,4 +29,7 @@ class PlacesCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    @IBAction func vote(_ sender: Any) {
+        //send vote
+    }
 }
