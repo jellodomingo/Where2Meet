@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ENTER A CODE" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QeH-uN-NuI">
-                                <rect key="frame" x="95" y="672" width="224" height="34"/>
+                                <rect key="frame" x="95" y="618" width="224" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="224" id="zJb-wA-ZtJ"/>
                                 </constraints>
@@ -24,7 +24,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lzk-Zy-rW5">
-                                <rect key="frame" x="-17" y="544" width="448" height="108"/>
+                                <rect key="frame" x="95" y="544" width="224" height="54"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="GENERATE A CODE" backgroundImage="home_generateCodeButton">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -41,7 +41,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lGi-eK-nxp">
-                                <rect key="frame" x="197" y="726" width="20" height="20"/>
+                                <rect key="frame" x="197" y="672" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="w7p-nJ-Qkk"/>
                                     <constraint firstAttribute="width" constant="20" id="ygY-K8-1Gy"/>
@@ -225,12 +225,20 @@
                                     <action selector="timePicker:" destination="jkQ-DB-nVl" eventType="valueChanged" id="fwv-Zi-re4"/>
                                 </connections>
                             </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DUP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LGy-5b-vMu">
+                                <rect key="frame" x="189" y="242" width="35" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="9N0-XC-6ja"/>
                     </view>
                     <navigationItem key="navigationItem" title="PREFERENCES" id="6QU-7c-Q7T"/>
                     <connections>
+                        <outlet property="duplicateTest" destination="LGy-5b-vMu" id="MEd-et-vJW"/>
                         <segue destination="cxs-q1-ubm" kind="presentation" identifier="pref_to_over" modalPresentationStyle="fullScreen" id="nyq-zA-dti"/>
                     </connections>
                 </viewController>
