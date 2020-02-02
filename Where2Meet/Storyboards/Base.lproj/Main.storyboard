@@ -57,6 +57,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="lGi-eK-nxp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0P2-HH-S3F"/>
                             <constraint firstItem="lGi-eK-nxp" firstAttribute="top" secondItem="QeH-uN-NuI" secondAttribute="bottom" constant="20" id="9fU-mS-5lG"/>
@@ -68,6 +69,9 @@
                             <constraint firstItem="QeH-uN-NuI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oka-nx-TO2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="bqH-hU-X4c" appends="YES" id="NgN-dh-rZ9"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="39Q-Hd-V5n"/>
                     <nil key="simulatedTopBarMetrics"/>
@@ -82,6 +86,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="bqH-hU-X4c">
+                    <connections>
+                        <action selector="onTap:" destination="BYZ-38-t0r" id="uIe-js-slF"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="415.94202898550731" y="306.69642857142856"/>
         </scene>
@@ -727,6 +736,23 @@
                         <viewLayoutGuide key="safeArea" id="dLB-aR-mbn"/>
                     </view>
                     <navigationItem key="navigationItem" title="OVERVIEW" id="o7f-Iy-RAj"/>
+                    <connections>
+                        <outlet property="addressLabel1" destination="89G-hO-Lk9" id="UfG-pH-ewM"/>
+                        <outlet property="addressLabel2" destination="VAK-xZ-2zp" id="xsS-eY-d7p"/>
+                        <outlet property="addressLabel3" destination="hSI-U9-Z1K" id="Kkp-SA-Rj6"/>
+                        <outlet property="placeTitle1" destination="Ay5-Sa-nOB" id="rez-Lc-Ali"/>
+                        <outlet property="placeTitle2" destination="PLH-jT-GKV" id="Per-wK-w3j"/>
+                        <outlet property="placeTitle3" destination="CXh-Y4-E9e" id="oZ5-X3-3x4"/>
+                        <outlet property="priceLabel1" destination="ERo-5J-e3g" id="0eQ-v2-2lI"/>
+                        <outlet property="priceLabel2" destination="GVG-YS-Y7Q" id="1BE-wt-3d9"/>
+                        <outlet property="priceLabel3" destination="GVG-YS-Y7Q" id="E1L-q4-Vbn"/>
+                        <outlet property="ratingLabel1" destination="XB0-tv-aV8" id="HNu-Ax-GZW"/>
+                        <outlet property="ratingLabel2" destination="avv-Lu-o6W" id="THN-g4-r2c"/>
+                        <outlet property="ratingLabel3" destination="Oll-Dp-dst" id="LNr-YA-1c5"/>
+                        <outlet property="typeImage1" destination="G8z-NU-lNa" id="Vrp-63-0LH"/>
+                        <outlet property="typeImage2" destination="EIC-Hs-eiT" id="1ca-2h-Kj2"/>
+                        <outlet property="typeImage3" destination="GVG-YS-Y7Q" id="ucH-Ea-k8G"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TmE-de-Kcb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

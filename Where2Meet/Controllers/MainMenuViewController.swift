@@ -53,6 +53,10 @@ class MainMenuViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
+    @IBAction func onTap(_ sender: Any) {
+        view.endEditing(true)
+    }
+    
     @objc func keyboardWillHide(notification: NSNotification) {
         if self.view.frame.origin.y != 0 {
             self.view.frame.origin.y = 0
@@ -104,7 +108,7 @@ class MainMenuViewController: UIViewController, CLLocationManagerDelegate {
     {
         let test = payload
         
-        let testUrl = URL(string: "https://meguzg0s66.execute-api.us-west-1.amazonaws.com/dev/getprefs")!
+        let testUrl = URL(string: "https://meguzg0s66.execute-api.us-west-1.amazonaws.com/dev/existing")!
         
         do {
             var request = URLRequest(url: testUrl, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
@@ -216,15 +220,10 @@ class MainMenuViewController: UIViewController, CLLocationManagerDelegate {
         
         do {
             var request = URLRequest(url: testUrl, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
-            request.httpMethod = "POST"
-            request.addValue("applications/json", forHTTPHeaderField: "Content-Type")
-            request.httpBody = try JSONEncoder().encode(test)
-            
-            let jsonString = String(data: (request.httpBody as Data?)!, encoding: .utf8)!
-            print(jsonString)
+            request.httpMethod = "GET"
 
             let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
-            
+        
             
             
             let task = session.dataTask(with: request) { (data, response, error) in
