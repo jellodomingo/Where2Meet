@@ -39,16 +39,17 @@ class PreferenceViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestAlwaysAuthorization()
+
         
         preferences.device_id = self.device_id
         preferences.code = self.code
         preferences.lat = String(format:"%f", self.location.lat)
         preferences.lng = String(format:"%f", self.location.lng)
         preferences.category = "Eating"
-        preferences.radius = String(format:"%f", Int(radiusSlider.value))
+        preferences.radius = "10000"
         preferences.price = "1"
         preferences.start_time = getStartTime()
-        preferences.duration = String(format:"%f", Int(timeSlider.value))
+        preferences.duration = "150"
         
         print(preferences)
         
@@ -72,8 +73,12 @@ class PreferenceViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     @IBAction func distanceSlider(_ sender: UISlider) {
-        preferences.radius = String(format:"%d",Int(sender.value*30))
-        print(Int(sender.value*30))
+        radiusSlider.minimumValue = 1700
+        radiusSlider.maximumValue = 30000
+        
+        preferences.radius = String(format:"%f",sender.value)
+        print(convertToMiles(meters: Double(sender.value)))
+        
     }
     
     @IBAction func timePicker(_ sender: Any) {
@@ -82,8 +87,11 @@ class PreferenceViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     @IBAction func durationSlider(_ sender: UISlider) {
-        preferences.duration = String(format:"%d",Int(sender.value*300))
-        print(Int(sender.value*300))
+        timeSlider.minimumValue = 60
+        timeSlider.maximumValue = 300
+        
+        preferences.duration = String(format:"%d", convertToHours(minutes: Int(sender.value)))
+        print(convertToHours(minutes: Int(sender.value)))
     }
     
     @IBAction func d1Button(_ sender: Any) {
@@ -150,8 +158,15 @@ class PreferenceViewController: UIViewController, CLLocationManagerDelegate {
     
                 
                 do {
+                    /*
                     let messageData = try JSONDecoder().decode(NewGroupCodeResponse.self, from: jsonData)
                     print(messageData)
+                    */
+                    
+                    //print(String(data: data!, encoding: .utf8)!)
+                    let dataDictionary = try! JSONSerialization.jsonObject(with: (data ?? nil)!, options: []) as! [String: Any]
+                    
+                    print(dataDictionary)
                     
                 } catch {
                     print("Decoder Error")
@@ -166,6 +181,15 @@ class PreferenceViewController: UIViewController, CLLocationManagerDelegate {
     }
 // ===================================================================================
     
+    func convertToMiles(meters: Double) -> Int
+    {
+        return Int(meters/1609.34)
+    }
     
+    func convertToHours(minutes: Int) -> Int
+    {
+        return Int(minutes/60)
+    }
+ 
     
 }

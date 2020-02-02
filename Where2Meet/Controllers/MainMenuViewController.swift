@@ -81,6 +81,8 @@ class MainMenuViewController: UIViewController, CLLocationManagerDelegate {
     //ENTER CODE BUTTON
     @IBAction func sendCode(_ sender: Any) {
         let code = getCodeField(code: codeField.text ?? "Invalid" )
+        self.EntryCode = code
+    
         
         let request = ExistingGroupCodeRequest(device_id: getWiFiAddress() ?? "", code: code)
         
@@ -142,6 +144,8 @@ class MainMenuViewController: UIViewController, CLLocationManagerDelegate {
     //Gets a new code for the room
     @IBAction func generateCode(_ sender: Any) {
         
+        generateCodeButton.loadingIndicator(true)
+        
         let code = getIPAddress()
         
         do {
@@ -152,6 +156,8 @@ class MainMenuViewController: UIViewController, CLLocationManagerDelegate {
             
             //Calls the generate endpoint
             generateCodeRequest(payload: code)
+            
+            
         
         } catch {
             print("Error")
@@ -203,6 +209,7 @@ class MainMenuViewController: UIViewController, CLLocationManagerDelegate {
     
     func generateCodeRequest(payload: NewGroupCodeRequest) -> Void
     {
+        
         let test = payload
         
         let testUrl = URL(string: "https://meguzg0s66.execute-api.us-west-1.amazonaws.com/dev/generate")!
@@ -218,8 +225,11 @@ class MainMenuViewController: UIViewController, CLLocationManagerDelegate {
 
             let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
             
+            
+            
             let task = session.dataTask(with: request) { (data, response, error) in
                // This will run when the network request returns
+
                 guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200, let jsonData = data else {
                     print("Response Error")
                     return
@@ -228,17 +238,20 @@ class MainMenuViewController: UIViewController, CLLocationManagerDelegate {
                 
                 do {
                     let messageData = try JSONDecoder().decode(NewGroupCodeResponse.self, from: jsonData)
-                    print(messageData)
                     
-                     self.EntryCode = messageData.code
+                    print(messageData.code)
+                    self.EntryCode = messageData.code
+                    self.performSegue(withIdentifier: "home_to_displaycode", sender: self)
+                    
                     
                 } catch {
                     print("Decoder Error")
                 }
-                
-                
             }
             task.resume()
+            
+            
+            
         } catch {
             print("Error")
         }
@@ -247,11 +260,21 @@ class MainMenuViewController: UIViewController, CLLocationManagerDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        let prefViewsController = segue.destination as! PreferenceViewController
-        
-        prefViewsController.code = self.EntryCode
-        prefViewsController.device_id = getWiFiAddress() ?? ""
-        prefViewsController.location = getLocation()
+        if(segue.identifier == "main_enterCode")
+        {
+            let prefViewsController = segue.destination as! PreferenceViewController
+            
+            prefViewsController.code = self.EntryCode
+            prefViewsController.device_id = getWiFiAddress() ?? ""
+            prefViewsController.location = getLocation()
+        }
+        else if(segue.identifier == "home_to_displaycode")
+        {
+            let displayCodeController = segue.destination as! GeneratedCodeViewController
+            
+            displayCodeController.code = self.EntryCode
+        }
     }
 
+    
 }

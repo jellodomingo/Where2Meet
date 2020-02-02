@@ -12,10 +12,16 @@ class GeneratedCodeViewController: UIViewController {
     
     @IBOutlet weak var codeBG: UIView!
     @IBOutlet weak var copyButton: UIButton!
+    @IBOutlet weak var codeLabel: UILabel!
+    
+    var code: String? = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        codeLabel.textAlignment = .center
+        codeLabel.text = code
+        
         //sets bg image
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "home_bg.png")!)
         
@@ -27,7 +33,11 @@ class GeneratedCodeViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func copyButton(_ sender: Any) {
+        let pasteboard = UIPasteboard.general
+        pasteboard.string = code
+    }
+    
     /*
     // MARK: - Navigation
 
