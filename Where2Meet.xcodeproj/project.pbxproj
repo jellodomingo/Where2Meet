@@ -22,6 +22,7 @@
 		A6E478F323E64287003B9012 /* PreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E478F223E64287003B9012 /* PreferenceViewController.swift */; };
 		A6E478F523E6447A003B9012 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E478F423E6447A003B9012 /* extensions.swift */; };
 		A6E478F723E69DFE003B9012 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E478F623E69DFE003B9012 /* RoundButton.swift */; };
+		A6E478F923E6B502003B9012 /* GeneratedCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E478F823E6B502003B9012 /* GeneratedCodeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		A6E478F223E64287003B9012 /* PreferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceViewController.swift; sourceTree = "<group>"; };
 		A6E478F423E6447A003B9012 /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		A6E478F623E69DFE003B9012 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		A6E478F823E6B502003B9012 /* GeneratedCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratedCodeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 				178D34E923E5DEF100D3B1E1 /* ViewController.swift */,
 				178D351B23E6274800D3B1E1 /* MainMenuViewController.swift */,
 				A6E478F223E64287003B9012 /* PreferenceViewController.swift */,
+				A6E478F823E6B502003B9012 /* GeneratedCodeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				178D351A23E5F0E500D3B1E1 /* TestStruct.swift in Sources */,
 				178D351C23E6274800D3B1E1 /* MainMenuViewController.swift in Sources */,
 				178D34EA23E5DEF100D3B1E1 /* ViewController.swift in Sources */,
+				A6E478F923E6B502003B9012 /* GeneratedCodeViewController.swift in Sources */,
 				A6E478F523E6447A003B9012 /* extensions.swift in Sources */,
 				178D352023E6869E00D3B1E1 /* Helpers.swift in Sources */,
 				178D34E623E5DEF100D3B1E1 /* AppDelegate.swift in Sources */,

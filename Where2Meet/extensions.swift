@@ -13,8 +13,8 @@ extension UIButton {
     func applyDesign() {
         //self.backgroundColor = UIColor.darkGray.withAlphaComponent(1)
         self.layer.borderWidth = 1
-        self.layer.borderColor = UIColor.red.cgColor
-        self.layer.cornerRadius = self.frame.height / 4 // Rounds corners completely.
+        self.layer.borderColor = UIColor.blue.cgColor
+        self.layer.cornerRadius = self.frame.height / 2 // Rounds corners completely.
     }
     
     func roundButton() {
@@ -74,7 +74,7 @@ extension UIColor {
     }
     
     static var blue: UIColor {
-        return UIColor(red: 0, green: 122, blue: 255)
+        return UIColor(red: 190, green: 228, blue: 239)
     }
     
     static var purple: UIColor {
