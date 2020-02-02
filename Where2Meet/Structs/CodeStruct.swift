@@ -8,14 +8,36 @@
 
 import Foundation
 
-struct GroupCode : Encodable{
-    
-    struct Location : Encodable {
-        var long:Float
-        var lat:Float
-    }
-    var device_id:String
-    var code:String
-
+//generate
+struct NewGroupCodeRequest : Encodable {
+    var device_id: String
 }
+
+//generate reponse
+struct NewGroupCodeResponse : Decodable {
+    var code: String
+}
+
+//getprefs
+struct ExistingGroupCodeRequest : Encodable {
+    var device_id: String
+    var code: String
+}
+
+struct PreferencesResponse : Decodable {
+    var lat:String?
+    var lng:String?
+    var radius:String?
+    var category:String?
+    var price:String?
+    var start_time:String?
+    var duration:String?
+}
+
+/*
+struct SubmissionResponse : Decodable {
+    
+}
+ */
+
 

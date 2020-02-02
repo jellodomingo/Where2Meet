@@ -46,6 +46,7 @@
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
+		<string>location-services</string>
 	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
@@ -60,9 +61,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>YO BITCH WE NEED UR PERMISSION</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>YO BITCH WE NEED UR PERMISSION</string>
+	<string>Permission PLease</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Permission Please</string>
 </dict>
 </plist>
