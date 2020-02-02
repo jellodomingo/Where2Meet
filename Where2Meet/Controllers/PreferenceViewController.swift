@@ -190,7 +190,7 @@ class PreferenceViewController: UIViewController, CLLocationManagerDelegate {
         //if submit is success & all data is grabbed & ready, then call this function to open up & display the overview screen stuff :D
         
         //send data
-        //submissionRequest(payload: preferences)
+        submissionRequest(payload: preferences)
         //save all options to the preferences class
     }
     
@@ -280,7 +280,7 @@ class PreferenceViewController: UIViewController, CLLocationManagerDelegate {
         
         let resultsViewController = segue.destination as! ResultsViewController
         
-        resultsViewController.places = test //self.placesDict
+        resultsViewController.places = self.placesDict
     }
     
     
