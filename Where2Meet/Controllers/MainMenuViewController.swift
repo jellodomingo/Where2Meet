@@ -17,11 +17,32 @@ class MainMenuViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
 
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "home_bg.png")!)
+        
+        //move screen when keyboard appears
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     
     }
     
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
+    }
+    
     @IBAction func sendCode(_ sender: Any) {
-        getCodeField(code: codeField.text ?? "Invalid" )
+        //getCodeField(code: codeField.text ?? "Invalid" )
+        
+        //TODO: gotta go to respective screen based on if people submitted prefs
+        self.performSegue(withIdentifier: "main_enterCode", sender: self)
     }
     
     @IBAction func generateCode(_ sender: Any) {
