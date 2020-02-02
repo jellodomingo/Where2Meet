@@ -12,15 +12,25 @@ import NetworkExtension
 
 class MainMenuViewController: UIViewController, CLLocationManagerDelegate {
     
+    let locationManager = CLLocationManager()
+    
     @IBOutlet weak var codeField: UITextField!
     @IBOutlet weak var logoDisplay: UIImageView!
     @IBOutlet weak var generateCodeButton: UIButton!
     @IBOutlet weak var codeSubmitButton: UIButton!
     
+    var EntryCode: String? = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "home_bg.png")!)
+        
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestAlwaysAuthorization()
+        
+        locationManager.startUpdatingLocation()
         
         //move screen when keyboard appears
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -42,10 +52,27 @@ class MainMenuViewController: UIViewController, CLLocationManagerDelegate {
             }
         }
     }
-
+    
     @objc func keyboardWillHide(notification: NSNotification) {
         if self.view.frame.origin.y != 0 {
             self.view.frame.origin.y = 0
+        }
+    }
+    
+    func getLocation() -> Location {
+        var currentLoc: CLLocation!
+        if(CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
+        CLLocationManager.authorizationStatus() == .authorizedAlways) {
+            currentLoc = locationManager.location
+            print(currentLoc.coordinate.latitude)
+            print(currentLoc.coordinate.longitude)
+            
+            return Location(lat: currentLoc.coordinate.latitude, lng: currentLoc.coordinate.longitude)
+        }
+        else
+        {
+            print("nothing")
+            return Location(lat: 0, lng: 0)
         }
     }
     
@@ -202,6 +229,9 @@ class MainMenuViewController: UIViewController, CLLocationManagerDelegate {
                 do {
                     let messageData = try JSONDecoder().decode(NewGroupCodeResponse.self, from: jsonData)
                     print(messageData)
+                    
+                     self.EntryCode = messageData.code
+                    
                 } catch {
                     print("Decoder Error")
                 }
@@ -217,8 +247,11 @@ class MainMenuViewController: UIViewController, CLLocationManagerDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        //let userCode =
+        let prefViewsController = segue.destination as! PreferenceViewController
         
+        prefViewsController.code = self.EntryCode
+        prefViewsController.device_id = getWiFiAddress() ?? ""
+        prefViewsController.location = getLocation()
     }
 
 }

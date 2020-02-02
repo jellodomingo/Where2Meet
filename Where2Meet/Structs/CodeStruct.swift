@@ -8,6 +8,11 @@
 
 import Foundation
 
+struct Location{
+    var lat: Double
+    var lng: Double
+}
+
 //generate
 struct NewGroupCodeRequest : Encodable {
     var device_id: String
@@ -43,6 +48,7 @@ struct SubmissionRequest : Decodable {
     
     var lat:String?
     var lng:String?
+    var type:String?
     var radius:String?
     var category:String?
     var price:String?
@@ -55,6 +61,7 @@ struct SubmissionRequest : Decodable {
         self.code = ""
         self.lat = ""
         self.lng = ""
+        self.type = ""
         self.radius = ""
         self.category = ""
         self.price = ""

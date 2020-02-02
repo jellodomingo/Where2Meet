@@ -35,46 +35,6 @@ class ViewController: UIViewController {
         })
         */
     }
-    
-    
-
-    func save (_ location:Location, completion: @escaping(Result<Location, APIError>) -> Void)
-    {
-        let testLocation = location
-        
-        let testUrl = URL(string: "https://meguzg0s66.execute-api.us-west-1.amazonaws.com/dev/location")!
-        
-        do {
-            var request = URLRequest(url: testUrl, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
-            request.httpMethod = "POST"
-            request.addValue("applications/json", forHTTPHeaderField: "Content-Type")
-            request.httpBody = try JSONEncoder().encode(testLocation)
-            
-            let jsonString = String(data: (request.httpBody as Data?)!, encoding: .utf8)!
-            print(jsonString)
-
-            let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
-            let task = session.dataTask(with: request) { (data, response, error) in
-               // This will run when the network request returns
-                guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200, let jsonData = data else {
-                    completion(.failure(.responseProblem))
-                    return
-                }
-                
-                do {
-                    let messageData = try JSONDecoder().decode(Location.self, from: jsonData)
-                    completion(.success(messageData))
-                } catch {
-                    completion(.failure(.decodingProblem))
-                }
-                
-            
-            }
-            task.resume()
-        } catch {
-            completion(.failure(.encodingProblem))
-        }
-    }
 
 }
 
