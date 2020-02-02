@@ -649,6 +649,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                             </button>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="overview_bg" translatesAutoresizingMaskIntoConstraints="NO" id="lMu-js-hOP">
+                                <rect key="frame" x="0.0" y="199" width="414" height="542"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -680,6 +683,7 @@
                             <constraint firstItem="LUA-Lk-mOJ" firstAttribute="leading" secondItem="TRB-w9-dkE" secondAttribute="trailing" constant="3" id="Pqx-jN-diQ"/>
                             <constraint firstItem="L53-bV-AP6" firstAttribute="top" secondItem="lF4-er-qwg" secondAttribute="bottom" constant="159" id="QO8-Lg-EZ9"/>
                             <constraint firstItem="vhY-XP-7e1" firstAttribute="leading" secondItem="Ay5-Sa-nOB" secondAttribute="trailing" constant="145.5" id="QmO-eI-8je"/>
+                            <constraint firstItem="lMu-js-hOP" firstAttribute="top" secondItem="VPe-DQ-lJ8" secondAttribute="bottom" constant="10" id="SMA-5W-8w2"/>
                             <constraint firstItem="lF4-er-qwg" firstAttribute="top" secondItem="dLB-aR-mbn" secondAttribute="top" constant="20" id="TbH-bB-dLP"/>
                             <constraint firstItem="CXh-Y4-E9e" firstAttribute="top" secondItem="VAK-xZ-2zp" secondAttribute="bottom" constant="66.5" id="VLP-sU-7kC"/>
                             <constraint firstItem="yvR-JY-kMj" firstAttribute="leading" secondItem="O0b-ZD-p3c" secondAttribute="trailing" constant="7" id="WPM-y6-yuM"/>
@@ -704,6 +708,7 @@
                             <constraint firstItem="Ay5-Sa-nOB" firstAttribute="top" secondItem="Lob-AR-daL" secondAttribute="bottom" constant="135" id="hwg-ix-UvB"/>
                             <constraint firstItem="L53-bV-AP6" firstAttribute="leading" secondItem="XB0-tv-aV8" secondAttribute="trailing" constant="7" id="iia-d1-7DN"/>
                             <constraint firstItem="lF4-er-qwg" firstAttribute="centerX" secondItem="Flx-BS-Jj4" secondAttribute="centerX" id="iyI-qe-nkd"/>
+                            <constraint firstItem="lMu-js-hOP" firstAttribute="centerX" secondItem="Flx-BS-Jj4" secondAttribute="centerX" id="j3t-wj-cjT"/>
                             <constraint firstItem="EIC-Hs-eiT" firstAttribute="top" secondItem="PLH-jT-GKV" secondAttribute="bottom" constant="11.5" id="jd5-pM-2iL"/>
                             <constraint firstItem="PLH-jT-GKV" firstAttribute="top" secondItem="89G-hO-Lk9" secondAttribute="bottom" constant="62.5" id="kQy-Um-PDT"/>
                             <constraint firstItem="Oll-Dp-dst" firstAttribute="top" secondItem="CXh-Y4-E9e" secondAttribute="bottom" constant="14.5" id="noP-Go-K0W"/>
@@ -740,6 +745,7 @@
         <image name="locate" width="20" height="25"/>
         <image name="mini_activity" width="20" height="20"/>
         <image name="mini_price2" width="20" height="20"/>
+        <image name="overview_bg" width="413.5" height="542"/>
         <image name="price1_selected_1" width="53" height="53"/>
         <image name="price2_idle_1" width="53" height="53"/>
         <image name="price3_idle_1" width="53" height="53"/>
