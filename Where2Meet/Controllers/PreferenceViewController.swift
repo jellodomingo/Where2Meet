@@ -196,7 +196,7 @@ class PreferenceViewController: UIViewController, CLLocationManagerDelegate {
                     //print(String(data: data!, encoding: .utf8)!)
                     let dataDictionary = try! JSONSerialization.jsonObject(with: (data ?? nil)!, options: []) as! [String: [String: Any]]
                     
-                    print(type(of: dataDictionary))
+                    //print(type(of: dataDictionary))
                     
                     for v in dataDictionary.values
                     {
