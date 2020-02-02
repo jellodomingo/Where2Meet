@@ -18,6 +18,7 @@
 		178D351A23E5F0E500D3B1E1 /* TestStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178D351923E5F0E500D3B1E1 /* TestStruct.swift */; };
 		178D351C23E6274800D3B1E1 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178D351B23E6274800D3B1E1 /* MainMenuViewController.swift */; };
 		178D351E23E62EA700D3B1E1 /* CodeStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178D351D23E62EA700D3B1E1 /* CodeStruct.swift */; };
+		178D352023E6869E00D3B1E1 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178D351F23E6869E00D3B1E1 /* Helpers.swift */; };
 		A6E478F323E64287003B9012 /* PreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E478F223E64287003B9012 /* PreferenceViewController.swift */; };
 		A6E478F523E6447A003B9012 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E478F423E6447A003B9012 /* extensions.swift */; };
 /* End PBXBuildFile section */
@@ -57,6 +58,7 @@
 		178D351923E5F0E500D3B1E1 /* TestStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestStruct.swift; sourceTree = "<group>"; };
 		178D351B23E6274800D3B1E1 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		178D351D23E62EA700D3B1E1 /* CodeStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeStruct.swift; sourceTree = "<group>"; };
+		178D351F23E6869E00D3B1E1 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		A6E478F223E64287003B9012 /* PreferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceViewController.swift; sourceTree = "<group>"; };
 		A6E478F423E6447A003B9012 /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -171,6 +173,7 @@
 			children = (
 				178D351923E5F0E500D3B1E1 /* TestStruct.swift */,
 				178D351D23E62EA700D3B1E1 /* CodeStruct.swift */,
+				178D351F23E6869E00D3B1E1 /* Helpers.swift */,
 			);
 			path = Structs;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				178D351C23E6274800D3B1E1 /* MainMenuViewController.swift in Sources */,
 				178D34EA23E5DEF100D3B1E1 /* ViewController.swift in Sources */,
 				A6E478F523E6447A003B9012 /* extensions.swift in Sources */,
+				178D352023E6869E00D3B1E1 /* Helpers.swift in Sources */,
 				178D34E623E5DEF100D3B1E1 /* AppDelegate.swift in Sources */,
 				178D34E823E5DEF100D3B1E1 /* SceneDelegate.swift in Sources */,
 				A6E478F323E64287003B9012 /* PreferenceViewController.swift in Sources */,

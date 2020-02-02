@@ -37,8 +37,8 @@ struct PreferencesResponse : Decodable {
 
 //submit request
 struct SubmissionRequest : Decodable {
-    var device_id:String
-    var code:String
+    var device_id:String?
+    var code:String?
     
     var lat:String?
     var lng:String?

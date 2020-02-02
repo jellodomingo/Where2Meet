@@ -9,22 +9,20 @@
 import UIKit
 
 class PreferenceViewController: UIViewController {
-
-    @IBOutlet weak var preferenceSubmit: UIButton!
     
-    @IBOutlet weak var eatingButton: UIButton!
-    @IBOutlet weak var activityButton: UIButton!
-    @IBOutlet weak var studyingButton: UIButton!
-    
-    @IBOutlet weak var distanceSlider: UISlider!
-    @IBOutlet weak var datePicker: UIDatePicker!
-    @IBOutlet weak var durationSlider: UISlider!
-    
-    @IBOutlet weak var d1Button: UIButton!
-    @IBOutlet weak var d2Button: UIButton!
-    @IBOutlet weak var d3Button: UIButton!
-    @IBOutlet weak var d4Button: UIButton!
-    
+    /*
+    var userPreferences = SubmissionRequest(
+        device_id: "",
+        code: "",
+        lat: "",
+        lng:  "",
+        radius: "",
+        category: "",
+        price: "",
+        start_time: "",
+        duration: "")
+    */
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,9 +32,49 @@ class PreferenceViewController: UIViewController {
 
     }
     
+    @IBAction func eatingButtonPress(_ sender: Any) {
+        
+    }
+    
+    @IBAction func activityButtonPress(_ sender: Any) {
+        
+    }
+    
+    @IBAction func studyButtonPress(_ sender: Any) {
+        
+    }
+    
+    @IBAction func distanceSlider(_ sender: Any) {
+        
+    }
+    
+    @IBAction func timePicker(_ sender: Any) {
+        
+    }
+    
+    @IBAction func durationSlider(_ sender: Any) {
+        
+    }
+    
+    @IBAction func d1Button(_ sender: Any) {
+        
+    }
+    
+    @IBAction func d2Button(_ sender: Any) {
+        
+    }
+    
+    @IBAction func d3Button(_ sender: Any) {
+        
+    }
+    
+    @IBAction func d4Button(_ sender: Any) {
+        
+    }
+    
     @IBAction func preferenceSubmit(_ sender: Any) {
         //to show a loading indicator
-        preferenceSubmit.loadingIndicator(true)
+        //preferenceSubmit.loadingIndicator(true)
         //if submit is success & all data is grabbed & ready, then call this function to open up & display the overview screen stuff :D
         
         

@@ -62,7 +62,7 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Permission PLease</string>
+	<string>Permission Please</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Permission Please</string>
 </dict>
