@@ -25,6 +25,7 @@ class PreferenceViewController: UIViewController {
         //sets the bg image
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "alt_bg.png")!)
         
+        // fhjdsahfjkldsahjkfdshjalkf
         //code in case I wanna use extension to apply button design:
         //preferenceSubmit.applyDesign()
 
