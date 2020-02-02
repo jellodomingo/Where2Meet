@@ -308,7 +308,15 @@
                     </view>
                     <navigationItem key="navigationItem" title="PREFERENCES" id="6QU-7c-Q7T"/>
                     <connections>
+                        <outlet property="activityButton" destination="PmS-w7-A8x" id="Oi6-Gm-1PS"/>
+                        <outlet property="cheapButton" destination="2TC-TR-0EB" id="KFy-6d-Oqm"/>
+                        <outlet property="datePicker" destination="G0e-YE-htg" id="FNr-9g-lt3"/>
                         <outlet property="eatingButton" destination="aBu-Oe-U85" id="vxS-uJ-C6Y"/>
+                        <outlet property="middleClassButton" destination="jEV-xc-OXz" id="BP0-pz-4Z2"/>
+                        <outlet property="radiusSlider" destination="Aao-0y-bQq" id="GG7-sC-WZb"/>
+                        <outlet property="richButton" destination="E3z-kg-eA7" id="bHo-Kg-8DY"/>
+                        <outlet property="studyButton" destination="ziM-i1-lGg" id="UPu-w8-X74"/>
+                        <outlet property="timeSlider" destination="yd8-hC-2rT" id="3ZR-nc-AlR"/>
                         <segue destination="cxs-q1-ubm" kind="presentation" identifier="pref_to_over" modalPresentationStyle="fullScreen" id="nyq-zA-dti"/>
                     </connections>
                 </viewController>

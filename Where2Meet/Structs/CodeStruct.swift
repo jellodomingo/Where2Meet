@@ -41,16 +41,15 @@ struct PreferencesResponse : Decodable {
 }
 
 //submit request
-struct SubmissionRequest : Decodable {
+struct SubmissionRequest : Encodable {
     
     var device_id:String?
     var code:String?
     
     var lat:String?
     var lng:String?
-    var type:String?
-    var radius:String?
     var category:String?
+    var radius:String?
     var price:String?
     var start_time:String?
     var duration:String?
@@ -61,16 +60,17 @@ struct SubmissionRequest : Decodable {
         self.code = ""
         self.lat = ""
         self.lng = ""
-        self.type = ""
-        self.radius = ""
         self.category = ""
+        self.radius = ""
         self.price = ""
         self.start_time = ""
         self.duration = ""
     }
 }
 
-
+struct ResultsResponse : Decodable {
+    
+}
 /*
 struct SubmissionResponse : Decodable {
     
