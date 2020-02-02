@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "submit_gradient_1.png",
+      "filename" : "study_selected_1.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "submit_gradient_2.png",
+      "filename" : "study_selected_2.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "submit_gradient_3.png",
+      "filename" : "study_selected_3.png",
       "scale" : "3x"
     }
   ],
