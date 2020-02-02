@@ -13,6 +13,9 @@ import NetworkExtension
 class MainMenuViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var codeField: UITextField!
+    @IBOutlet weak var logoDisplay: UIImageView!
+    @IBOutlet weak var generateCodeButton: UIButton!
+    @IBOutlet weak var codeSubmitButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()

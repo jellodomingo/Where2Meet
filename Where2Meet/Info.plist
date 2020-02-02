@@ -24,6 +24,8 @@
 	<string>Permission Please</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Permission Please</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Permission Please</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

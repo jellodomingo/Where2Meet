@@ -74,6 +74,9 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="codeField" destination="QeH-uN-NuI" id="481-fZ-EcR"/>
+                        <outlet property="codeSubmitButton" destination="lGi-eK-nxp" id="DMA-pM-cfj"/>
+                        <outlet property="generateCodeButton" destination="Lzk-Zy-rW5" id="17a-lS-Y0h"/>
+                        <outlet property="logoDisplay" destination="CjW-RT-t0U" id="TzE-LM-XKd"/>
                         <segue destination="jkQ-DB-nVl" kind="presentation" identifier="main_enterCode" modalPresentationStyle="fullScreen" id="4nL-Bf-EwH"/>
                     </connections>
                 </viewController>
