@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ENTER A CODE" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QeH-uN-NuI">
-                                <rect key="frame" x="95" y="618" width="224" height="34"/>
+                                <rect key="frame" x="95" y="672" width="224" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="224" id="zJb-wA-ZtJ"/>
                                 </constraints>
@@ -24,7 +24,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lzk-Zy-rW5">
-                                <rect key="frame" x="95" y="544" width="224" height="54"/>
+                                <rect key="frame" x="-17" y="544" width="448" height="108"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="GENERATE A CODE" backgroundImage="home_generateCodeButton">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -41,7 +41,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lGi-eK-nxp">
-                                <rect key="frame" x="197" y="672" width="20" height="20"/>
+                                <rect key="frame" x="197" y="726" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="w7p-nJ-Qkk"/>
                                     <constraint firstAttribute="width" constant="20" id="ygY-K8-1Gy"/>

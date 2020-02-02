@@ -7,29 +7,49 @@
 //
 
 import UIKit
+import CoreLocation
 
-class PreferenceViewController: UIViewController {
+class PreferenceViewController: UIViewController, CLLocationManagerDelegate {
     
-    /*
-    var userPreferences = SubmissionRequest(
-        device_id: "",
-        code: "",
-        lat: "",
-        lng:  "",
-        radius: "",
-        category: "",
-        price: "",
-        start_time: "",
-        duration: "")
-    */
- 
+    var preferences = SubmissionRequest()
+    
+    //var code: String
+    
+    let locationManager = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "alt_bg.png")!)
+        
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestAlwaysAuthorization()
+        
+        //preferences.device_id = getWifiAddress()
+        //preferences.code = code
+        
+        
+        
+        
         //code in case I wanna use extension to apply button design:
         //preferenceSubmit.applyDesign()
 
+    }
+    
+    // Get long and lat location from user GPS
+    func getLocation() {
+        var currentLoc: CLLocation!
+        if(CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
+        CLLocationManager.authorizationStatus() == .authorizedAlways) {
+           currentLoc = locationManager.location
+           print(currentLoc.coordinate.latitude)
+           print(currentLoc.coordinate.longitude)
+        }
+        else
+        {
+            print("nothing")
+        }
     }
     
     @IBAction func eatingButtonPress(_ sender: Any) {
