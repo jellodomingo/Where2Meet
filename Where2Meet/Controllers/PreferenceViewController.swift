@@ -31,7 +31,7 @@ class PreferenceViewController: UIViewController, CLLocationManagerDelegate {
 
     var preferences = SubmissionRequest()
     
-    var placesDict: [String:[String:Any]] = [:]
+    var placesDict: [[String:Any]] = []
     
     var code: String? = ""
     var device_id: String = ""
@@ -226,7 +226,7 @@ class PreferenceViewController: UIViewController, CLLocationManagerDelegate {
                     */
                     
                     //print(String(data: data!, encoding: .utf8)!)
-                    let dataDictionary = try! JSONSerialization.jsonObject(with: (data ?? nil)!, options: []) as! [String: [String:Any]]
+                    let dataDictionary = try! JSONSerialization.jsonObject(with: (data ?? nil)!, options: []) as! [String: [String: Any]]
                     
                     print(dataDictionary)
                     
@@ -235,8 +235,7 @@ class PreferenceViewController: UIViewController, CLLocationManagerDelegate {
                     for v in dataDictionary.values
                     {
                         //placesDict
-                        
-                        
+                        place["name"] = v["name"]
                         place["formatted_address"] = v["formatted_address"]
                         //print(v["formatted_address"])
                         place["types"] = v["types"]
@@ -248,7 +247,9 @@ class PreferenceViewController: UIViewController, CLLocationManagerDelegate {
                         place["types"] = v["types"]
                         place["rating"] = v["rating"]
                         
-                        self.placesDict["name"] = place
+                    
+                        print(place)
+                        self.placesDict.append(place)
                     }
                     
                     self.performSegue(withIdentifier: "pref_to_over", sender: self)
@@ -268,6 +269,13 @@ class PreferenceViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        /*let test: [[String:Any]] = [
+            ["name":"Value1"],
+            ["name":"Value2"],
+            ["name":"Value3"]
+        ]
+        */
         
         
         let resultsViewController = segue.destination as! ResultsViewController
