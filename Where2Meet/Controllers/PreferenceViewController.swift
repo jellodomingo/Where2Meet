@@ -10,8 +10,6 @@ import UIKit
 
 class PreferenceViewController: UIViewController {
     
-    @IBOutlet weak var duplicateTest: UILabel!
-    
     /*
     var userPreferences = SubmissionRequest(
         device_id: "",
@@ -67,10 +65,6 @@ class PreferenceViewController: UIViewController {
     }
     
     @IBAction func d3Button(_ sender: Any) {
-        
-    }
-    
-    @IBAction func d4Button(_ sender: Any) {
         
     }
     
