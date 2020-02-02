@@ -15,17 +15,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ENTER A CODE" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QeH-uN-NuI">
-                                <rect key="frame" x="95" y="618" width="224" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ENTER A CODE" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QeH-uN-NuI">
+                                <rect key="frame" x="95" y="618" width="224" height="54"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="L1z-V2-1lS"/>
                                     <constraint firstAttribute="width" constant="224" id="zJb-wA-ZtJ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lzk-Zy-rW5">
                                 <rect key="frame" x="95" y="544" width="224" height="54"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="GENERATE A CODE" backgroundImage="home_generateCodeButton">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -33,7 +34,7 @@
                                     <action selector="generateCode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PEJ-Ae-vkl"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeLogo" translatesAutoresizingMaskIntoConstraints="NO" id="CjW-RT-t0U">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_logo_x1" translatesAutoresizingMaskIntoConstraints="NO" id="CjW-RT-t0U">
                                 <rect key="frame" x="82" y="194" width="250" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="dFo-oC-sZg"/>
@@ -41,7 +42,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lGi-eK-nxp">
-                                <rect key="frame" x="197" y="672" width="20" height="20"/>
+                                <rect key="frame" x="197" y="692" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="w7p-nJ-Qkk"/>
                                     <constraint firstAttribute="width" constant="20" id="ygY-K8-1Gy"/>
@@ -223,6 +224,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="PREFERENCES" id="6QU-7c-Q7T"/>
                     <connections>
+                        <outlet property="eatingButton" destination="aBu-Oe-U85" id="vxS-uJ-C6Y"/>
                         <segue destination="cxs-q1-ubm" kind="presentation" identifier="pref_to_over" modalPresentationStyle="fullScreen" id="nyq-zA-dti"/>
                     </connections>
                 </viewController>
@@ -275,8 +277,8 @@
     </scenes>
     <resources>
         <image name="gradient_submit" width="303" height="49"/>
-        <image name="homeLogo" width="168" height="241"/>
         <image name="home_generateCodeButton" width="224" height="54"/>
+        <image name="home_logo_x1" width="300" height="300"/>
         <image name="home_submitArrow" width="22" height="21"/>
     </resources>
     <inferredMetricsTieBreakers>

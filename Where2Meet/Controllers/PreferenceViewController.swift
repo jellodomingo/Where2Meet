@@ -11,6 +11,8 @@ import CoreLocation
 
 class PreferenceViewController: UIViewController, CLLocationManagerDelegate {
     
+    @IBOutlet weak var eatingButton: UIButton!
+    
     var preferences = SubmissionRequest()
     
     //var code: String
@@ -33,7 +35,7 @@ class PreferenceViewController: UIViewController, CLLocationManagerDelegate {
         
         
         //code in case I wanna use extension to apply button design:
-        //preferenceSubmit.applyDesign()
+        //eatingButton.applyDesign()
 
     }
     

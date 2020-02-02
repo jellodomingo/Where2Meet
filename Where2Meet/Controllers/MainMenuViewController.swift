@@ -22,6 +22,13 @@ class MainMenuViewController: UIViewController, CLLocationManagerDelegate {
         //move screen when keyboard appears
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        //rounding & changing color of code text field
+        codeField.layer.cornerRadius = codeField.frame.height / 2
+        codeField.layer.borderWidth = 1.0
+        codeField.layer.borderColor = UIColor.red.cgColor
+        codeField.attributedPlaceholder = NSAttributedString(string: "ENTER A CODE",
+        attributes: [NSAttributedString.Key.foregroundColor: UIColor.red])
     
     }
     
