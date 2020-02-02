@@ -16,6 +16,7 @@ class PreferenceViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var studyButton: UIButton!
     @IBOutlet weak var radiusSlider: UISlider!
     @IBOutlet weak var timeSlider: UISlider!
+    @IBOutlet weak var radiusSliderLabel: UILabel!
     
     @IBOutlet weak var cheapButton: UIButton!
     @IBOutlet weak var middleClassButton: UIButton!
@@ -35,6 +36,12 @@ class PreferenceViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "alt_bg.png")!)
+        
+        //changes the color of the timepicker
+        datePicker.setValue(UIColor.red, forKeyPath: "textColor")
+        //changes color of the sliders
+        radiusSlider.minimumTrackTintColor = UIColor.red
+        timeSlider.minimumTrackTintColor = UIColor.red
         
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
@@ -72,8 +79,21 @@ class PreferenceViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     @IBAction func distanceSlider(_ sender: UISlider) {
+        
+        //styling the slider hopefully to display numberrrr
+        let x = Int(round(sender.value))
+        radiusSliderLabel.text = "\(x)"
+        radiusSliderLabel.center = setUISliderThumbValueWithLabel(slider: sender)
+        
         preferences.radius = String(format:"%d",Int(sender.value*30))
         print(Int(sender.value*30))
+    }
+    
+    //assistant function to help display slider label
+    func setUISliderThumbValueWithLabel(slider: UISlider) -> CGPoint {
+        let slidertTrack : CGRect = slider.trackRect(forBounds: slider.bounds)
+        let sliderFrm : CGRect = slider .thumbRect(forBounds: slider.bounds, trackRect: slidertTrack, value: slider.value)
+        return CGPoint(x: sliderFrm.origin.x + slider.frame.origin.x + 15, y: slider.frame.origin.y + 15)
     }
     
     @IBAction func timePicker(_ sender: Any) {
