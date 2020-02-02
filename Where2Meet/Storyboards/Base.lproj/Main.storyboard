@@ -225,12 +225,20 @@
                                     <action selector="timePicker:" destination="jkQ-DB-nVl" eventType="valueChanged" id="fwv-Zi-re4"/>
                                 </connections>
                             </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DUP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LGy-5b-vMu">
+                                <rect key="frame" x="189" y="242" width="35" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="9N0-XC-6ja"/>
                     </view>
                     <navigationItem key="navigationItem" title="PREFERENCES" id="6QU-7c-Q7T"/>
                     <connections>
+                        <outlet property="duplicateTest" destination="LGy-5b-vMu" id="MEd-et-vJW"/>
                         <segue destination="cxs-q1-ubm" kind="presentation" identifier="pref_to_over" modalPresentationStyle="fullScreen" id="nyq-zA-dti"/>
                     </connections>
                 </viewController>

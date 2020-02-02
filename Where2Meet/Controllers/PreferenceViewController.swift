@@ -10,6 +10,8 @@ import UIKit
 
 class PreferenceViewController: UIViewController {
     
+    @IBOutlet weak var duplicateTest: UILabel!
+    
     /*
     var userPreferences = SubmissionRequest(
         device_id: "",
