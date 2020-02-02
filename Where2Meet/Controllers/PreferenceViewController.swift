@@ -88,10 +88,6 @@ class PreferenceViewController: UIViewController, CLLocationManagerDelegate {
         
     }
     
-    @IBAction func d4Button(_ sender: Any) {
-        
-    }
-    
     @IBAction func preferenceSubmit(_ sender: Any) {
         //to show a loading indicator
         //preferenceSubmit.loadingIndicator(true)
