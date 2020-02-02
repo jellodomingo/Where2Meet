@@ -18,6 +18,8 @@ class PreferenceViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var timeSlider: UISlider!
     @IBOutlet weak var radiusSliderLabel: UILabel!
     @IBOutlet weak var timeSliderLabel: UILabel!
+    @IBOutlet weak var radiusSliderBG: UIView!
+    @IBOutlet weak var timeSliderBG: UIView!
     
     @IBOutlet weak var cheapButton: UIButton!
     @IBOutlet weak var middleClassButton: UIButton!
@@ -45,6 +47,9 @@ class PreferenceViewController: UIViewController, CLLocationManagerDelegate {
         //changes color of the sliders
         radiusSlider.minimumTrackTintColor = UIColor.red
         timeSlider.minimumTrackTintColor = UIColor.red
+        //pushes background of sliders to back
+        view.sendSubviewToBack(radiusSliderBG)
+        view.sendSubviewToBack(timeSliderBG)
         
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
@@ -70,16 +75,29 @@ class PreferenceViewController: UIViewController, CLLocationManagerDelegate {
     @IBAction func eatingButtonPress(_ sender: Any) {
         preferences.category = "Eating"
         print(preferences)
+        
+        eatingButton.setBackgroundImage(UIImage(named: "eating_selected_1.png"), for: .normal)
+        activityButton.setBackgroundImage(UIImage(named: "activity_idle_1.png"), for: .normal)
+        studyButton.setBackgroundImage(UIImage(named: "study_idle_1.png"), for: .normal)
+
     }
     
     @IBAction func activityButtonPress(_ sender: Any) {
         preferences.category = "Activity"
         print(preferences)
+        
+        eatingButton.setBackgroundImage(UIImage(named: "eating_idle_1.png"), for: .normal)
+        activityButton.setBackgroundImage(UIImage(named: "activity_selected_1.png"), for: .normal)
+        studyButton.setBackgroundImage(UIImage(named: "study_idle_1.png"), for: .normal)
     }
     
     @IBAction func studyButtonPress(_ sender: Any) {
         preferences.category = "Study"
         print(preferences)
+        
+        eatingButton.setBackgroundImage(UIImage(named: "eating_idle_1.png"), for: .normal)
+        activityButton.setBackgroundImage(UIImage(named: "activity_idle_1.png"), for: .normal)
+        studyButton.setBackgroundImage(UIImage(named: "study_selected_1.png"), for: .normal)
     }
     
     @IBAction func distanceSlider(_ sender: UISlider) {
@@ -129,16 +147,28 @@ class PreferenceViewController: UIViewController, CLLocationManagerDelegate {
     @IBAction func d1Button(_ sender: Any) {
         preferences.price = "1"
         print(preferences)
+        
+        cheapButton.setBackgroundImage(UIImage(named: "price1_selected_1.png"), for: .normal)
+        middleClassButton.setBackgroundImage(UIImage(named: "price2_idle_1.png"), for: .normal)
+        richButton.setBackgroundImage(UIImage(named: "price3_idle_1.png"), for: .normal)
     }
     
     @IBAction func d2Button(_ sender: Any) {
         preferences.price = "2"
         print(preferences)
+        
+        cheapButton.setBackgroundImage(UIImage(named: "price1_idle_1.png"), for: .normal)
+        middleClassButton.setBackgroundImage(UIImage(named: "price2_selected_1.png"), for: .normal)
+        richButton.setBackgroundImage(UIImage(named: "price3_idle_1.png"), for: .normal)
     }
     
     @IBAction func d3Button(_ sender: Any) {
         preferences.price = "3"
         print(preferences)
+        
+        cheapButton.setBackgroundImage(UIImage(named: "price1_idle_1.png"), for: .normal)
+        middleClassButton.setBackgroundImage(UIImage(named: "price2_idle_1.png"), for: .normal)
+        richButton.setBackgroundImage(UIImage(named: "price3_selected_1.png"), for: .normal)
     }
     
     func getStartTime() -> String
