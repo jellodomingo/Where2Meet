@@ -9,13 +9,22 @@
 import UIKit
 
 class PreferenceViewController: UIViewController {
-
+    
+    // MARK: Outlets
     @IBOutlet weak var preferenceSubmit: UIButton!
+    @IBOutlet weak var distanceBG: UIView!
+    @IBOutlet weak var durationBG: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //sends the views to the back
+        view.sendSubviewToBack(distanceBG)
+        view.sendSubviewToBack(durationBG)
+        
+        //sets the bg image
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "alt_bg.png")!)
+        
         //code in case I wanna use extension to apply button design:
         //preferenceSubmit.applyDesign()
 
@@ -26,7 +35,7 @@ class PreferenceViewController: UIViewController {
         //to show a loading indicator
         preferenceSubmit.loadingIndicator(true)
         //if submit is success & all data is grabbed & ready, then call this function to open up & display the overview screen stuff :D
-        self.performSegue(withIdentifier: "pref_to_over", sender: self)
+        //self.performSegue(withIdentifier: "pref_to_over", sender: self)
     }
     
     /*

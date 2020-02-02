@@ -20,6 +20,10 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>YO BITCH WE NEED UR PERMISSION</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>YO BITCH WE NEED UR PERMISSION</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -60,9 +64,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>YO BITCH WE NEED UR PERMISSION</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>YO BITCH WE NEED UR PERMISSION</string>
 </dict>
 </plist>
