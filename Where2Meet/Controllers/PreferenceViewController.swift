@@ -25,6 +25,8 @@ class PreferenceViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var datePicker: UIDatePicker!
     
+    @IBOutlet weak var submitButton: UIButton!
+
     var preferences = SubmissionRequest()
     
     var code: String? = ""
@@ -152,7 +154,7 @@ class PreferenceViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBAction func preferenceSubmit(_ sender: Any) {
         //to show a loading indicator
-        //preferenceSubmit.loadingIndicator(true)
+        submitButton.loadingIndicator(true)
         //if submit is success & all data is grabbed & ready, then call this function to open up & display the overview screen stuff :D
         
         //send data
@@ -196,16 +198,25 @@ class PreferenceViewController: UIViewController, CLLocationManagerDelegate {
                     //print(String(data: data!, encoding: .utf8)!)
                     let dataDictionary = try! JSONSerialization.jsonObject(with: (data ?? nil)!, options: []) as! [String: [String: Any]]
                     
-                    //print(type(of: dataDictionary))
+                    print(dataDictionary)
+                    
+                    //var placesDict: [[String: Any]] = [:]
                     
                     for v in dataDictionary.values
                     {
+                        //placesDict
+                        
                         print(v["name"])
                         print(v["formatted_address"])
                         print(v["types"])
                         print(v["price_level"])
                         print(v["votes"])
+                        
+                        
                     }
+                    
+                    self.performSegue(withIdentifier: "pref_to_over", sender: self)
+                    
                     
                 } catch {
                     print("Decoder Error")
@@ -214,10 +225,17 @@ class PreferenceViewController: UIViewController, CLLocationManagerDelegate {
                 
             }
             task.resume()
+            
         } catch {
             print("Error")
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+    }
+    
+    
 // ===================================================================================
     
     func convertToMiles(meters: Double) -> Int

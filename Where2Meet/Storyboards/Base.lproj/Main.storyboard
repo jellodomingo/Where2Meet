@@ -364,6 +364,7 @@
                         <outlet property="radiusSliderLabel" destination="RuY-6M-rgc" id="Nsu-tf-nqv"/>
                         <outlet property="richButton" destination="E3z-kg-eA7" id="bHo-Kg-8DY"/>
                         <outlet property="studyButton" destination="ziM-i1-lGg" id="UPu-w8-X74"/>
+                        <outlet property="submitButton" destination="hMp-2k-xIQ" id="3P3-bd-Oon"/>
                         <outlet property="timeSlider" destination="yd8-hC-2rT" id="3ZR-nc-AlR"/>
                         <outlet property="timeSliderLabel" destination="O5v-dK-LOz" id="fEv-Zr-rfb"/>
                         <segue destination="cxs-q1-ubm" kind="presentation" identifier="pref_to_over" modalPresentationStyle="fullScreen" id="nyq-zA-dti"/>
@@ -376,7 +377,7 @@
         <!--OVERVIEW-->
         <scene sceneID="VYZ-Wc-9qA">
             <objects>
-                <viewController id="cxs-q1-ubm" sceneMemberID="viewController">
+                <viewController id="cxs-q1-ubm" customClass="ResultsViewController" customModule="Where2Meet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Flx-BS-Jj4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -405,15 +406,23 @@
                                     <action selector="preferenceSubmit:" destination="jkQ-DB-nVl" eventType="touchUpInside" id="YkO-MT-nZt"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Jpi-jJ-HK7">
+                                <rect key="frame" x="0.0" y="175" width="414" height="537"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="dLB-aR-mbn"/>
                     </view>
                     <navigationItem key="navigationItem" title="OVERVIEW" id="o7f-Iy-RAj"/>
+                    <connections>
+                        <outlet property="tableView" destination="Jpi-jJ-HK7" id="Ool-dN-WDj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TmE-de-Kcb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2148" y="307"/>
+            <point key="canvasLocation" x="2147.826086956522" y="306.69642857142856"/>
         </scene>
     </scenes>
     <resources>
@@ -430,6 +439,6 @@
         <image name="study_idle_1" width="81" height="98"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="CrR-nr-XMY"/>
+        <segue reference="cQd-1Y-Mub"/>
     </inferredMetricsTieBreakers>
 </document>
