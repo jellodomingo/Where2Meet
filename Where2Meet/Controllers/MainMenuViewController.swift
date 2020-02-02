@@ -242,7 +242,7 @@ class MainMenuViewController: UIViewController, CLLocationManagerDelegate {
                     print(messageData.code)
                     self.EntryCode = messageData.code
                     self.performSegue(withIdentifier: "home_to_displaycode", sender: self)
-                    
+                
                     
                 } catch {
                     print("Decoder Error")

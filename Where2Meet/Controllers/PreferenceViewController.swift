@@ -175,7 +175,7 @@ class PreferenceViewController: UIViewController, CLLocationManagerDelegate {
             request.httpBody = try JSONEncoder().encode(test)
             
             let jsonString = String(data: (request.httpBody as Data?)!, encoding: .utf8)!
-            print(jsonString)
+            //print(jsonString)
 
             let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
             
@@ -194,9 +194,18 @@ class PreferenceViewController: UIViewController, CLLocationManagerDelegate {
                     */
                     
                     //print(String(data: data!, encoding: .utf8)!)
-                    let dataDictionary = try! JSONSerialization.jsonObject(with: (data ?? nil)!, options: []) as! [String: Any]
+                    let dataDictionary = try! JSONSerialization.jsonObject(with: (data ?? nil)!, options: []) as! [String: [String: Any]]
                     
-                    print(dataDictionary)
+                    print(type(of: dataDictionary))
+                    
+                    for v in dataDictionary.values
+                    {
+                        print(v["name"])
+                        print(v["formatted_address"])
+                        print(v["types"])
+                        print(v["price_level"])
+                        print(v["votes"])
+                    }
                     
                 } catch {
                     print("Decoder Error")
